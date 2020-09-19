@@ -19,7 +19,7 @@ namespace Infrastructure.Data
             return await _context.ProductBrands.ToListAsync();
         }
 
-        public async Task<product> GetProductByIdAsync(int id)
+        public async Task<Product> GetProductByIdAsync(int id)
         {
             return await _context.Products
                     .Include(p => p.ProductType)
@@ -27,7 +27,7 @@ namespace Infrastructure.Data
                     .FirstOrDefaultAsync(p => p.Id == id);
         }
 
-        public async Task<IReadOnlyList<product>> GetProductsAsync()
+        public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
             return await _context.Products
                     .Include(p => p.ProductType)

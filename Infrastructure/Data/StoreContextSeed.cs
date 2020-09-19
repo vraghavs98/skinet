@@ -50,7 +50,7 @@ namespace Infrastructure.Data
                     var productData = 
                         File.ReadAllText("../Infrastructure/Data/SeedData/products.json");
 
-                    var products = JsonSerializer.Deserialize<List<product>>(productData);
+                    var products = JsonSerializer.Deserialize<List<Product>>(productData);
 
                     foreach (var item in products)
                     {
